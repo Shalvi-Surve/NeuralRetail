@@ -1,0 +1,830 @@
+/* ==========================================================
+   NeuralRetail Design System v2
+========================================================== */
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/* ---------- Theme ---------- */
+
+:root{
+
+    --primary:#4F46E5;
+    --secondary:#7C3AED;
+    --accent:#06B6D4;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --background:#F4F7FB;
+    --surface:#FFFFFF;
+    --surface-2:#F8FAFC;
+
+    --border:#E5E7EB;
+
+    --text:#0F172A;
+    --text-light:#64748B;
+
+    --radius:22px;
+
+}
+
+
+/* ---------- Base ---------- */
+
+html,
+body,
+[class*="css"]{
+
+    font-family:"Inter",sans-serif;
+
+}
+
+
+.stApp{
+
+    background:var(--background);
+
+}
+
+
+/* ---------- Layout ---------- */
+
+.block-container{
+
+    padding-top:2rem;
+
+    padding-bottom:2rem;
+
+    padding-left:2.5rem;
+
+    padding-right:2.5rem;
+
+    max-width:1550px;
+
+}
+
+
+/* ---------- Hide Streamlit ---------- */
+
+header{
+
+    visibility:hidden;
+
+}
+
+footer{
+
+    visibility:hidden;
+
+}
+
+#MainMenu{
+
+    visibility:hidden;
+
+}
+
+
+/* ---------- Sidebar ---------- */
+
+section[data-testid="stSidebar"]{
+
+    background:linear-gradient(
+        180deg,
+        #FFFFFF,
+        #F8FAFC
+    );
+
+    border-right:1px solid var(--border);
+
+}
+
+section[data-testid="stSidebar"] *{
+
+    color:var(--text);
+
+}
+
+
+/* ---------- Headings ---------- */
+
+h1{
+
+    color:var(--text);
+
+    font-weight:800;
+
+}
+
+h2{
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+h3{
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+p{
+
+    color:var(--text-light);
+
+}
+
+
+/* ---------- KPI Card ---------- */
+
+.kpi-card{
+
+    background:var(--surface);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.05);
+
+    transition:.25s ease;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 45px rgba(79,70,229,.18);
+
+}
+
+
+/* ---------- Generic Card ---------- */
+
+.card{
+
+    background:var(--surface);
+
+    border-radius:22px;
+
+    border:1px solid var(--border);
+
+    padding:24px;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.05);
+
+}
+
+
+/* ---------- Charts ---------- */
+
+.js-plotly-plot{
+
+    border-radius:22px;
+
+}
+
+
+/* ---------- Dataframes ---------- */
+
+[data-testid="stDataFrame"]{
+
+    background:white;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+
+}
+
+
+/* ---------- Metrics ---------- */
+
+[data-testid="metric-container"]{
+
+    background:white;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    padding:18px;
+
+}
+
+
+/* ---------- Buttons ---------- */
+
+.stButton button{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    height:48px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.stButton button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ---------- Download Button ---------- */
+
+.stDownloadButton button{
+
+    border-radius:12px;
+
+    height:48px;
+
+}
+
+
+/* ---------- Divider ---------- */
+
+hr{
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+    margin-top:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#94A3B8;
+
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+@media (prefers-color-scheme: dark){
+
+:root{
+
+    --background:#0F172A;
+    --surface:#1E293B;
+    --surface-2:#273449;
+
+    --border:#334155;
+
+    --text:#F8FAFC;
+    --text-light:#CBD5E1;
+
+}
+
+.stApp{
+
+    background:var(--background);
+
+}
+
+section[data-testid="stSidebar"]{
+
+    background:#111827;
+
+}
+
+[data-testid="metric-container"]{
+
+    background:var(--surface);
+
+}
+
+[data-testid="stDataFrame"]{
+
+    background:var(--surface);
+
+}
+
+}
+
+/* ==========================================================
+   Cards
+========================================================== */
+
+.kpi-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.kpi-label{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+.kpi-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+
+.kpi-number{
+
+    margin-top:18px;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:var(--text);
+
+}
+
+
+.kpi-change{
+
+    margin-top:14px;
+
+    color:var(--success);
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+
+.section-header{
+
+    margin-top:15px;
+
+    margin-bottom:18px;
+
+}
+
+
+.section-title{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:var(--text);
+
+}
+
+
+.section-subtitle{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+    font-size:16px;
+
+}
+
+
+.insight-heading{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+
+.insight-body{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    font-size:16px;
+
+}
+
+
+.status-title{
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+.status-value{
+
+    margin-top:14px;
+
+    text-align:center;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   Dashboard Header
+========================================================== */
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #4F46E5,
+        #6366F1,
+        #7C3AED
+    );
+
+    padding:34px;
+
+    border-radius:24px;
+
+    color:white;
+
+    margin-bottom:26px;
+
+    box-shadow:
+        0 20px 40px rgba(79,70,229,.18);
+
+}
+
+
+.header-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.dashboard-title{
+
+    font-size:40px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+
+.dashboard-subtitle{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    opacity:.92;
+
+    color:#EEF2FF;
+
+}
+
+
+.header-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    gap:12px;
+
+}
+
+
+.header-date{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:white;
+
+}
+
+
+.header-status{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(14px);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   Welcome Card
+========================================================== */
+
+.welcome-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    border:1px solid var(--border);
+
+    margin-bottom:24px;
+
+    box-shadow:
+        0 10px 25px rgba(15,23,42,.05);
+
+}
+
+
+.welcome-title{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:var(--text);
+
+}
+
+
+.welcome-text{
+
+    margin-top:12px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   Chart Card
+========================================================== */
+
+.chart-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:20px;
+
+    margin-bottom:24px;
+
+    box-shadow:
+        0 8px 25px rgba(15,23,42,.06);
+
+    transition:.25s ease;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 40px rgba(79,70,229,.12);
+
+}
+
+.chart-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   Tables
+========================================================== */
+
+.table-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:18px;
+
+    margin-top:12px;
+
+    margin-bottom:24px;
+
+    box-shadow:
+        0 8px 25px rgba(15,23,42,.05);
+
+}
+
+
+/* Streamlit Dataframe */
+
+[data-testid="stDataFrame"]{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+}
+
+
+/* Header */
+
+[data-testid="stDataFrame"] thead tr{
+
+    background:#EEF2FF;
+
+}
+
+
+/* Download Button */
+
+.stDownloadButton{
+
+    margin-top:12px;
+
+}
+
+/* ==========================================================
+   Landing Page
+========================================================== */
+
+.landing-hero{
+
+    background:linear-gradient(
+        135deg,
+        #4F46E5,
+        #6366F1,
+        #7C3AED
+    );
+
+    padding:60px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:35px;
+
+    box-shadow:
+        0 20px 50px rgba(79,70,229,.20);
+
+}
+
+.landing-title{
+
+    font-size:54px;
+
+    font-weight:900;
+
+    color:white;
+
+}
+
+.landing-subtitle{
+
+    margin-top:16px;
+
+    font-size:24px;
+
+    color:#EEF2FF;
+
+}
+
+.landing-text{
+
+    max-width:850px;
+
+    margin:auto;
+
+    margin-top:24px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#E2E8F0;
+
+}
