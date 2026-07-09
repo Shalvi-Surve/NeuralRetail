@@ -6,6 +6,9 @@ NeuralRetail is an end-to-end **AI-powered Retail Intelligence Platform** built 
 
 Developed as part of a Data Science internship project, NeuralRetail demonstrates the complete machine learning workflow—from data preprocessing and feature engineering to model development and deployment.
 
+Check out at: 
+https://neural-retail.streamlit.app/Dashboard
+
 ---
 
 ## 📌 Project Overview
