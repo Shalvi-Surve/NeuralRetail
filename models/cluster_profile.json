@@ -1,0 +1,48 @@
+{
+    "project": "NeuralRetail",
+    "version": "1.0.0",
+    "algorithm": "KMeans",
+    "clusters": 2,
+    "silhouette_score": 0.9294,
+    "generated_on": "2026-07-07 10:15:33.320950",
+    "features_used": [
+        "Recency",
+        "Frequency",
+        "Monetary",
+        "AverageOrderValue",
+        "InvoiceCount",
+        "ProductVariety",
+        "CustomerLifetimeValue",
+        "RevenueContribution"
+    ],
+    "cluster_scores": [
+        {
+            "k": 2,
+            "score": 0.9293680427547577
+        },
+        {
+            "k": 3,
+            "score": 0.491818165394242
+        },
+        {
+            "k": 4,
+            "score": 0.3152412110868658
+        },
+        {
+            "k": 5,
+            "score": 0.31581575403346207
+        },
+        {
+            "k": 6,
+            "score": 0.3277976130552962
+        },
+        {
+            "k": 7,
+            "score": 0.335088353298924
+        },
+        {
+            "k": 8,
+            "score": 0.3343112823893058
+        }
+    ]
+}

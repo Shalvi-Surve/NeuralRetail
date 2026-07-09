@@ -1,0 +1,7 @@
+{
+    "generated_on": "2026-07-07 04:05:30.711564",
+    "rows": 715863,
+    "columns": 33,
+    "rolling_window": 7,
+    "forecast_horizon": 30
+}

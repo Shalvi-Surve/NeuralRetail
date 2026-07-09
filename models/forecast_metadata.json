@@ -1,0 +1,8 @@
+{
+    "project": "NeuralRetail",
+    "generated_on": "2026-07-07 04:12:25.883889",
+    "algorithm": "RandomForestRegressor",
+    "mae": 3430.162178782604,
+    "rmse": 4700.5052357618015,
+    "r2_score": 0.5099693801448264
+}

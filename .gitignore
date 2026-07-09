@@ -14,11 +14,21 @@ logs/
 # Dataset
 data/
 
-# Generated artifacts
-artifacts/
+# Ignore only large training datasets
+data/
 
-# Trained models
-models/
+# Ignore only large model binaries
+models/*.pkl
+
+# Keep metadata JSON files
+!models/*.json
+
+# Keep deployment artifacts
+!artifacts/
+
+# Ignore only very large intermediate files
+artifacts/cleaned_data.csv
+artifacts/feature_data.csv
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
